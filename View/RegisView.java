@@ -3,6 +3,7 @@ package View;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -105,6 +106,10 @@ public class RegisView extends JFrame {
 		
 		btnRegis.addActionListener(ListenerRegis);
 		
+	}
+	
+	public void close() {
+		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	}
 
 	public JButton getBtnRegis() {

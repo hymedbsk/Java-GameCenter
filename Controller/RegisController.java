@@ -27,7 +27,6 @@ public class RegisController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			System.out.println("oi");
 			String Nom, Prenom, Pseudo, Password, Password2;
 			
 			   try {
@@ -39,7 +38,13 @@ public class RegisController {
 				Password2 = regisView.getTxtMotDePasse2();
 				if(Password.equals(Password2)) {
 					
-					System.out.println("Les mots de passe ne correspondent pas.");
+					regisModel.inscription(Pseudo,Password,Prenom,Nom);
+					System.out.println(regisModel.inscription);
+					if(regisModel.inscription==true) {
+						JOptionPane.showMessageDialog(null,"Votre inscription est validée !");
+						regisView.close();
+					}
+					
 				}else {
 					JOptionPane.showMessageDialog(null,"Les mots de passe ne correspondent pas.");
 					System.out.println("Les mots de passe ne correspondent pas.");
@@ -47,7 +52,7 @@ public class RegisController {
 				
 			}catch(NumberFormatException ex){
 				
-				System.out.println(ex);
+				JOptionPane.showMessageDialog(null,ex);
 				
 			}
 		}
