@@ -22,8 +22,6 @@ public class LoginController {
 	
 	class LoginListener implements ActionListener{
 
-		
-		
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String Pseudo, Password ="";
@@ -35,10 +33,9 @@ public class LoginController {
 				
 				Password = theView.getPswd();
 				
-				System.out.println(Pseudo+Password);
+			
 				theModel.verif(Pseudo,Password);
-				
-				System.out.println(theModel.verif());
+				System.out.println(theModel.session);
 				
 			}catch(NumberFormatException ex){
 				

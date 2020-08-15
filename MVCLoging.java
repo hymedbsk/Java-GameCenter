@@ -8,7 +8,7 @@ public class MVCLoging {
 		 LoginView theView = new LoginView();
 		 LoginModel theModel = new LoginModel();
 		 LoginController theController = new LoginController(theView,theModel);
-		
+		 theView.setVisible(true);
 	 }
 
 }
