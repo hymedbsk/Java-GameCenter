@@ -1,4 +1,5 @@
 import Controller.LoginController;
+import Model.BddModel;
 import Model.LoginModel;
 import View.LoginView;
 
@@ -8,6 +9,7 @@ public class MVCLoging {
 		 LoginView theView = new LoginView();
 		 LoginModel theModel = new LoginModel();
 		 LoginController theController = new LoginController(theView,theModel);
+		 BddModel bdd = new BddModel();
 		 theView.setVisible(true);
 	 }
 
