@@ -24,8 +24,11 @@ public class LoginView extends JFrame{
 	private JButton btnSinscrire = new JButton("S'inscrire");
 	private JButton btnClassement = new JButton("Classement");
 	private JLabel lblIntro = new JLabel("Connectes-toi, joue et bats les records pour t'\u00E9lever en haut du classement");
+	private final JLabel lblPseudo = new JLabel("Pseudo");
+	private final JLabel lblMotDePasse = new JLabel("Mot de passe");
 	
 	public LoginView() {
+		setResizable(false);
 		initialize();
 	}
 
@@ -35,21 +38,20 @@ public class LoginView extends JFrame{
 		this.setTitle("Game Center Connexion");
 		this.getContentPane().setBackground(Color.WHITE);
 		this.setBounds(100, 100, 665, 503);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.getContentPane().setLayout(null);
 		
 		
 		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnLogin.setBackground(Color.WHITE);
 		btnLogin.setForeground(new Color(255, 102, 0));
-		btnLogin.setBounds(199, 309, 271, 47);
+		btnLogin.setBounds(214, 311, 271, 47);
 		this.getContentPane().add(btnLogin);
 		
 		txtPseudo.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		txtPseudo.setText("Pseudo");
 		txtPseudo.setBackground(new Color(255, 102, 0));
 		txtPseudo.setForeground(Color.WHITE);
-		txtPseudo.setBounds(170, 163, 327, 33);
+		txtPseudo.setBounds(222, 168, 327, 37);
 		this.getContentPane().add(txtPseudo);
 		txtPseudo.setColumns(10);
 		
@@ -64,13 +66,11 @@ public class LoginView extends JFrame{
 		separator.setForeground(new Color(255, 102, 0));
 		separator.setBounds(10, 80, 628, 15);
 		this.getContentPane().add(separator);
-		
-		txtMotDePasse.setText("Mot de passe");
 		txtMotDePasse.setForeground(Color.WHITE);
 		txtMotDePasse.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		txtMotDePasse.setColumns(10);
 		txtMotDePasse.setBackground(new Color(255, 102, 0));
-		txtMotDePasse.setBounds(170, 237, 327, 33);
+		txtMotDePasse.setBounds(222, 233, 327, 37);
 		this.getContentPane().add(txtMotDePasse);
 		
 		
@@ -93,6 +93,16 @@ public class LoginView extends JFrame{
 		lblIntro.setBackground(new Color(255, 102, 0));
 		lblIntro.setBounds(10, 91, 638, 33);
 		this.getContentPane().add(lblIntro);
+		lblPseudo.setForeground(new Color(255, 102, 0));
+		lblPseudo.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPseudo.setBounds(122, 172, 90, 33);
+		
+		getContentPane().add(lblPseudo);
+		lblMotDePasse.setForeground(new Color(255, 102, 0));
+		lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblMotDePasse.setBounds(70, 237, 142, 33);
+		
+		getContentPane().add(lblMotDePasse);
 	}
 	
 	
@@ -112,6 +122,7 @@ public class LoginView extends JFrame{
 	public void LoginListener(ActionListener listenLogin) {
 		
 		btnLogin.addActionListener(listenLogin);
+		
 		
 	}
 	

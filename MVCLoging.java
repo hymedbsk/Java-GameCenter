@@ -2,15 +2,27 @@ import Controller.LoginController;
 import Model.BddModel;
 import Model.LoginModel;
 import View.LoginView;
+import serpent.Snake;
 
 public class MVCLoging {
 	 public static void main(String[] args) {
 
-		 LoginView theView = new LoginView();
-		 LoginModel theModel = new LoginModel();
-		 LoginController theController = new LoginController(theView,theModel);
+		
 		 BddModel bdd = new BddModel();
-		 theView.setVisible(true);
+		 LoginView logView = new LoginView();
+		
+		 
+		 LoginModel logModel = new LoginModel();
+		 LoginController logController = new LoginController(logView,logModel);		 
+		 logView.setVisible(true);
+		 
+		
+		
+		 //ClassModel classModel  = new ClassModel();
+		 //ClassView classView = new ClassView();
+		// ClassController classController = new ClassController(classModel,classView);
+		 //classView.setVisible(true);
+
 	 }
 
 }

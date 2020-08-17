@@ -20,11 +20,17 @@ public class RegisView extends JFrame {
 	private JTextField txtNom = new JTextField();
 	private JTextField txtPrenom = new JTextField();
 	private JTextField txtMotDePasse= new JPasswordField();
-	private JTextField txtMotDePasse2= new JTextField("Comfirmer le mot de Passe");
+	private JTextField txtMotDePasse2= new JPasswordField();
 	private JSeparator separator = new JSeparator();
 	private JLabel lblIntro = new JLabel("Inscris-toi, joue et bats les records pour t'\u00E9lever en haut du classement");
-
+	private JLabel lblNewLabel = new JLabel("Pr\u00E9nom");
+	private JLabel lblNom = new JLabel("Nom");
+	private JLabel lblPseudo = new JLabel("Pseudo");
+	private JLabel lblMotDePasse = new JLabel("Mot de passe");
+	private JLabel lblConfirmerLeMot = new JLabel("Confirmer ");
+	
 	public RegisView() {
+		setResizable(false);
 		initialize();
 	}
 
@@ -41,14 +47,13 @@ public class RegisView extends JFrame {
 		btnRegis.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnRegis.setBackground(Color.WHITE);
 		btnRegis.setForeground(new Color(255, 102, 0));
-		btnRegis.setBounds(194, 406, 271, 47);
+		btnRegis.setBounds(201, 405, 271, 47);
 		this.getContentPane().add(btnRegis);
 		
 		txtPseudo.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		txtPseudo.setText("Pseudo");
 		txtPseudo.setBackground(new Color(255, 102, 0));
 		txtPseudo.setForeground(Color.WHITE);
-		txtPseudo.setBounds(170, 253, 327, 33);
+		txtPseudo.setBounds(229, 253, 327, 33);
 		this.getContentPane().add(txtPseudo);
 		txtPseudo.setColumns(10);
 		
@@ -63,35 +68,29 @@ public class RegisView extends JFrame {
 		this.getContentPane().add(separator);
 		
 		txtNom.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		txtNom.setText("Nom");
 		txtNom.setBackground(new Color(255, 102, 0));
 		txtNom.setForeground(Color.WHITE);
-		txtNom.setBounds(170, 209, 327, 33);
+		txtNom.setBounds(229, 209, 327, 33);
 		this.getContentPane().add(txtNom);
 		txtNom.setColumns(10);
 		
 		txtPrenom.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		txtPrenom.setText("Prenom");
 		txtPrenom.setBackground(new Color(255, 102, 0));
 		txtPrenom.setForeground(Color.WHITE);
-		txtPrenom.setBounds(170, 165, 327, 33);
+		txtPrenom.setBounds(229, 167, 327, 33);
 		this.getContentPane().add(txtPrenom);
 		txtPrenom.setColumns(10);
-				
-		txtMotDePasse.setText("Mot de passe");
 		txtMotDePasse.setForeground(Color.WHITE);
 		txtMotDePasse.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		txtMotDePasse.setColumns(10);
 		txtMotDePasse.setBackground(new Color(255, 102, 0));
-		txtMotDePasse.setBounds(170, 341, 327, 33);
+		txtMotDePasse.setBounds(229, 339, 327, 33);
 		this.getContentPane().add(txtMotDePasse);
-		
-		txtMotDePasse2.setText("Mot de passe");
 		txtMotDePasse2.setForeground(Color.WHITE);
 		txtMotDePasse2.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		txtMotDePasse2.setColumns(10);
 		txtMotDePasse2.setBackground(new Color(255, 102, 0));
-		txtMotDePasse2.setBounds(170, 297, 327, 33);
+		txtMotDePasse2.setBounds(229, 297, 327, 33);
 		this.getContentPane().add(txtMotDePasse2);
 		
 		lblIntro.setForeground(new Color(255, 102, 0));
@@ -99,6 +98,36 @@ public class RegisView extends JFrame {
 		lblIntro.setBackground(new Color(255, 102, 0));
 		lblIntro.setBounds(20, 93, 618, 33);
 		this.getContentPane().add(lblIntro);
+		
+		
+		lblNewLabel.setForeground(new Color(255, 102, 0));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNewLabel.setBounds(130, 167, 90, 33);
+		this.getContentPane().add(lblNewLabel);
+		
+		
+		lblNom.setForeground(new Color(255, 102, 0));
+		lblNom.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNom.setBounds(130, 209, 90, 33);
+		this.getContentPane().add(lblNom);
+		
+		
+		lblPseudo.setForeground(new Color(255, 102, 0));
+		lblPseudo.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblPseudo.setBounds(130, 253, 90, 33);
+		this.getContentPane().add(lblPseudo);
+		
+		
+		lblMotDePasse.setForeground(new Color(255, 102, 0));
+		lblMotDePasse.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblMotDePasse.setBounds(88, 297, 132, 33);
+		this.getContentPane().add(lblMotDePasse);
+		
+		
+		lblConfirmerLeMot.setForeground(new Color(255, 102, 0));
+		lblConfirmerLeMot.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblConfirmerLeMot.setBounds(101, 341, 118, 33);
+		this.getContentPane().add(lblConfirmerLeMot);
 				
 	}
 	
@@ -186,6 +215,4 @@ public class RegisView extends JFrame {
 	public JLabel getLblIntro() {
 		return lblIntro;
 	}
-	
-
 }
