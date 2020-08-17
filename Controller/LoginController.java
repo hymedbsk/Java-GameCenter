@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import Model.LoginModel;
 import Model.RegisModel;
+import View.CenterView;
 import View.LoginView;
 import View.RegisView;
 
@@ -14,6 +15,7 @@ public class LoginController {
 
 	private LoginView logView;
 	private LoginModel logModel;
+	
 	
 	public LoginController(LoginView logView, LoginModel logModel) {
 		
@@ -37,9 +39,19 @@ public class LoginController {
 						
 				logModel.verif(Pseudo,Password);
 				System.out.println(logModel.session);
+				
 				if(logModel.session==true) {
-					JOptionPane.showMessageDialog(null,"Votre êtes connecté !");
+					
+					JOptionPane.showMessageDialog(null,"Votre êtes connecté !");			
+					System.out.println(logModel.pseudo);					
+					CenterView centerView = new CenterView(logModel.pseudo);
+					CenterController centerController = new CenterController(centerView);
+					centerView.setVisible(true);							
 					logView.close();
+										
+				}else {
+					
+					JOptionPane.showMessageDialog(null,"Pseudo ou mot de passe incorrect !");
 				}
 				
 			}catch(NumberFormatException ex){
@@ -59,7 +71,6 @@ public class LoginController {
 			 RegisModel regisModel = new RegisModel();
 			 RegisController refController = new RegisController(regisView,regisModel);				
 			 regisView.setVisible(true);
-		}
-		
+		}	
 	}
 }

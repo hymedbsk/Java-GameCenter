@@ -8,7 +8,7 @@ public class LoginModel {
 	
 
 	public boolean session = false;
-	
+	public String pseudo = "";
 	public void verif(String Pseudo, String Password) {
 		
 		
@@ -23,7 +23,7 @@ public class LoginModel {
 			if(rs.next())
             {
 				session = true;
-                    
+				pseudo = Pseudo;
             }
             else{
                  session = false;
@@ -32,11 +32,12 @@ public class LoginModel {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}					
+	}
 	
+	public String getNom() {
 		
-		
-				
+		return pseudo;
 	}
 	
 	public boolean getSession() {
