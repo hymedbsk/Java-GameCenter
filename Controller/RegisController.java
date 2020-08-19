@@ -36,6 +36,7 @@ public class RegisController {
 				Nom = regisView.getTxtNom();
 				Password = regisView.getTxtMotDePasse();	
 				Password2 = regisView.getTxtMotDePasse2();
+				
 				if(Password.equals(Password2)) {
 					
 					regisModel.inscription(Pseudo,Password,Prenom,Nom);

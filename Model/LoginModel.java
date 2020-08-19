@@ -8,7 +8,7 @@ public class LoginModel {
 	
 
 	public boolean session = false;
-	public String pseudo = "";
+	private String pseudo = "";
 	public void verif(String Pseudo, String Password) {
 		
 		
@@ -23,7 +23,7 @@ public class LoginModel {
 			if(rs.next())
             {
 				session = true;
-				pseudo = Pseudo;
+				setPseudo(Pseudo);
             }
             else{
                  session = false;
@@ -37,11 +37,19 @@ public class LoginModel {
 	
 	public String getNom() {
 		
-		return pseudo;
+		return getPseudo();
 	}
 	
 	public boolean getSession() {
 		return session;
+	}
+
+	public String getPseudo() {
+		return pseudo;
+	}
+
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 }
