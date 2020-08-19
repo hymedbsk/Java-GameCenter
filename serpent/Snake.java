@@ -5,20 +5,17 @@ package serpent;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.List;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import View.CenterView;
+import Controller.CenterController;
  
 public class Snake extends JPanel{
  
@@ -28,7 +25,7 @@ public class Snake extends JPanel{
     private Point apple = new Point(0,0);
     private Random rand = new Random();
     private JButton btnLogout = new JButton("Se d\u00E9connecter");
-    
+    private CenterController centerController;
     private boolean isGrowing = false;
     private boolean gameLost = false;
     public int score ;
@@ -109,17 +106,12 @@ public class Snake extends JPanel{
         super.paintComponent(g);
         
         if(gameLost) {
+        	 
             g.setColor(new Color(255, 102, 0));
             g.setFont(new Font("Arial", 45, 45));
             g.drawString("Partie terminée,ton score : "+score, 13*50/2 - g.getFontMetrics().stringWidth("Partie terminée, ton score : "+score)/2, 13*50/2);
-            btnLogout.setFont(new Font("Tahoma", Font.BOLD, 20));
-    		btnLogout.setBackground(Color.WHITE);
-    		btnLogout.setOpaque(true);
-    		btnLogout.setBorder(BorderFactory.createEmptyBorder());
-    		btnLogout.setForeground(new Color(255, 102, 0));
-    		btnLogout.setBounds(524, 425, 331, 97);
-    		btnLogout.setIcon(new ImageIcon(CenterView.class.getResource("/img/logout.png")));
-    			
+           
+    		
             return;
         }
         
@@ -156,6 +148,7 @@ public class Snake extends JPanel{
                 if(p != head) {
                     if(p.x == head.x && p.y == head.y) {
                         gameLost = true;
+                       
                     }
                 }
             }
@@ -174,10 +167,7 @@ public class Snake extends JPanel{
         	
         
     }
-    
-    public int getScore() {
-    	return score;
-    }
+
     public void onKeyPressed(int keyCode) {
         if(keyCode >= 37 && keyCode <= 40) {
             if(Math.abs(keyCode - newDirection) != 2) {

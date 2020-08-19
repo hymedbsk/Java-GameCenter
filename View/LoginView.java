@@ -143,4 +143,77 @@ public class LoginView extends JFrame{
 		  JOptionPane.showInputDialog(this, errorMessage);
 		          
 	 }
+
+	public JTextField getTxtPseudo() {
+		return txtPseudo;
+	}
+
+	public void setTxtPseudo(JTextField txtPseudo) {
+		this.txtPseudo = txtPseudo;
+	}
+
+	public JTextField getTxtMotDePasse() {
+		return txtMotDePasse;
+	}
+
+	public void setTxtMotDePasse(JTextField txtMotDePasse) {
+		this.txtMotDePasse = txtMotDePasse;
+	}
+
+	public JButton getBtnLogin() {
+		return btnLogin;
+	}
+
+	public void setBtnLogin(JButton btnLogin) {
+		this.btnLogin = btnLogin;
+	}
+
+	public JLabel getLblTitre() {
+		return lblTitre;
+	}
+
+	public void setLblTitre(JLabel lblTitre) {
+		this.lblTitre = lblTitre;
+	}
+
+	public JSeparator getSeparator() {
+		return separator;
+	}
+
+	public void setSeparator(JSeparator separator) {
+		this.separator = separator;
+	}
+
+	public JButton getBtnSinscrire() {
+		return btnSinscrire;
+	}
+
+	public void setBtnSinscrire(JButton btnSinscrire) {
+		this.btnSinscrire = btnSinscrire;
+	}
+
+	public JButton getBtnClassement() {
+		return btnClassement;
+	}
+
+	public void setBtnClassement(JButton btnClassement) {
+		this.btnClassement = btnClassement;
+	}
+
+	public JLabel getLblIntro() {
+		return lblIntro;
+	}
+
+	public void setLblIntro(JLabel lblIntro) {
+		this.lblIntro = lblIntro;
+	}
+
+	public JLabel getLblPseudo() {
+		return lblPseudo;
+	}
+
+	public JLabel getLblMotDePasse() {
+		return lblMotDePasse;
+	}
+	 
 }

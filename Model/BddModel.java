@@ -1,20 +1,19 @@
 package Model;
+import java.awt.Container;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
  
-public class BddModel{
+public class BddModel extends JFrame{
 	
 	private static Connection connection;
 	private Statement statement;
-
 
  	 
 	public BddModel() {
